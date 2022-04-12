@@ -157,6 +157,36 @@ basedLineScore
 
 # let's try some of them and see how our model prediction change by scalling
 
+############################################################
+######### adding std, min, max, as a features 
+features = train.columns.tolist()[0:-1]
+
+train['std'] = train[features].std(axis=1)
+test['std'] = test[features].std(axis=1)
+
+
+train['min'] = train[features].min(axis=1)
+test['min'] = test[features].min(axis=1)
+
+train['max'] = train[features].max(axis=1)
+test['max'] = test[features].max(axis=1)
+
+
+features += ['std','min','max']
+
+le = LabelEncoder()
+train['target'] = le.fit_transform(train['target'])
+
+sc = StandardScaler()
+train[features] = sc.fit_transform(train[features])
+test[features] = sc.transform(test[features])
+
+X = train[features]
+y = train['target']
+
+############################################################
+
+
 
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import MinMaxScaler
