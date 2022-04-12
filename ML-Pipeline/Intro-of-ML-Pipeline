@@ -1,0 +1,76 @@
+## Types of Machine learning Algorithms
+​
+1. Supervised Learning: Input data is called training data and
+has a known label or result.
+Ex: Spam/not-spam or a stock price at a time.
+​
+2. Unsupervised Learning: Input data is not labeled and does
+not have a known result.
+EX: Grouping customers by purchasing behavior
+​
+3. Semi-Supervised Learning: Input data is a mixture of labeled and
+unlabeled examples.
+EX: a photo archive where only some of the
+images are labeled, (e.g. dog, cat, person) and the majority are
+unlabeled.
+​
+4. Reinforcement Learning: a goal-oriented learning based
+on interaction with environment. Autonomous cars.
+
+
+
+## Supervised Machine Learning
+1. Regression: Linear Regression, Logistic Regression
+
+2. Instance-based Algorithms: k-Nearest Neighbor (KNN)
+
+3. Decision Tree Algorithms: CART
+
+4. Bayesian Algorithms: Naive Bayes
+
+5. Ensemble Algorithms: eXtreme Gradient Boosting
+
+6. Deep Learning Algorithms: Convolution Neural Network
+
+
+
+## Classification vs Regression
+**Classification** predicting a label .vs. **Regression** predicting a quantity.
+
+
+## Classification Algorithms Examples:
+- Linear: Linear Regression, Logistic Regression
+- Nonlinear: Trees, k-Nearest Neighbors
+- Ensemble:
+    - Bagging: Random Forest
+    - Boosting:  AdaBoost
+
+
+
+
+
+
+
+## Machine Learning Pipeline:
+​
+- Define Problem
+    - ML type of problem
+​
+- Prepare Data
+    - Data Visualization methos ...
+    - Data Selection
+    - Feature Selection methods ..
+    - Feature Engineering methods ..
+    - Data Transormation methods ..
+​
+- Spot Check Algorithm
+    - Test Harness ...
+    - Perform Measure ...
+    - Evaluate accuracy of different algorithms
+​
+- Improve Results 
+    - Algorithms Turning methids
+    - ensemble methods
+​
+- Present Results
+    - Save the model
