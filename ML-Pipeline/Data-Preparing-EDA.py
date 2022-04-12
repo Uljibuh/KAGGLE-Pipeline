@@ -61,6 +61,34 @@ categorical_feats = data.dtypes[data.dtypes == "object"].index
 print("Number of Categorical features: ", len(categorical_feats))
 
 
+# missing values 
+missing_value_count = df.isnull().sum()
+missing_value_count[0:10]
+
+
+# how many missing value in percentage
+total_cells = np.product(df.shape)
+total_missing = missing_value_count.sum()
+
+percent_missing = (total_missing/total_cells) * 100
+print(percent_missing)
+
+
+# drop missing values
+df.dropna()
+
+# remove all columns with at least one missing value
+df_with_na_dropped = df.dropna(axis=1)
+
+# calculate number of dropped columns
+cols_in_original_dataset = df.shape[1]
+cols_in_na_dropped = df_with_na_dropped.shape[1]
+dropped_columns = cols_in_original_dataset - cols_in_na_dropped
+
+
+
+
+
 
 # data visualization
 
