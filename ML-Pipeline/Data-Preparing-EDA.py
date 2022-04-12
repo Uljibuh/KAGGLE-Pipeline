@@ -116,7 +116,9 @@ dropped_columns = cols_in_original_dataset - cols_in_na_dropped
 df_with_na_imputed = df.fillna(method='bfill', axis=0).fillna(0)
 
 
-
+# checking for duplicated values
+print('Duplicate in Train data: ', train_df.duplicated().sum())
+print('Duplicate in Test data: ', test_df.duplicated().sum())
 
 
 
