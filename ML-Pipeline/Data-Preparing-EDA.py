@@ -61,6 +61,19 @@ categorical_feats = data.dtypes[data.dtypes == "object"].index
 print("Number of Categorical features: ", len(categorical_feats))
 
 
+# split features columns by categorical and continous variable
+categorical_val = []
+continous_val = []
+
+for column in data.columns:
+    if len(data[column].unique()) <= 10:
+        categorical_val.append(column)
+    else:
+        continous_val.append(column)
+        
+        
+        
+        
 # missing values 
 missing_value_count = df.isnull().sum()
 missing_value_count[0:10]
