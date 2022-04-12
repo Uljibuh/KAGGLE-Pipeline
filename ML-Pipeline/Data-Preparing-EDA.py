@@ -85,8 +85,8 @@ cols_in_original_dataset = df.shape[1]
 cols_in_na_dropped = df_with_na_dropped.shape[1]
 dropped_columns = cols_in_original_dataset - cols_in_na_dropped
 
-
-
+# automatically fill missing value with 0
+df_with_na_imputed = df.fillna(method='bfill', axis=0).fillna(0)
 
 
 
