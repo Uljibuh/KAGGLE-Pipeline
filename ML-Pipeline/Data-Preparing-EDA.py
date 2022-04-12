@@ -53,6 +53,13 @@ df.nunique()
 df.shape
 
 
+# number of numerical and number of categorical in our data
+numerical_feats = data.dtypes[data.dtypes != "object"].index
+print("Number of Numerical features: ", len(numerical_feats))
+
+categorical_feats = data.dtypes[data.dtypes == "object"].index
+print("Number of Categorical features: ", len(categorical_feats))
+
 
 
 # data visualization
