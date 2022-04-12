@@ -61,6 +61,8 @@ categorical_feats = data.dtypes[data.dtypes == "object"].index
 print("Number of Categorical features: ", len(categorical_feats))
 
 
+
+
 # split features columns by categorical and continous variable
 categorical_val = []
 continous_val = []
@@ -72,11 +74,20 @@ for column in data.columns:
         continous_val.append(column)
         
         
+ # convert catergorical feature to dummt features
+categorical_val.remove('target feature')
+
+dataset = pd.get_dummies(data, columns = categorical_val)
+dataset.head()
         
-        
+    
+    
 # missing values 
 missing_value_count = df.isnull().sum()
 missing_value_count[0:10]
+
+
+
 
 
 # how many missing value in percentage
@@ -85,6 +96,9 @@ total_missing = missing_value_count.sum()
 
 percent_missing = (total_missing/total_cells) * 100
 print(percent_missing)
+
+
+
 
 
 # drop missing values
@@ -100,6 +114,9 @@ dropped_columns = cols_in_original_dataset - cols_in_na_dropped
 
 # automatically fill missing value with 0
 df_with_na_imputed = df.fillna(method='bfill', axis=0).fillna(0)
+
+
+
 
 
 
