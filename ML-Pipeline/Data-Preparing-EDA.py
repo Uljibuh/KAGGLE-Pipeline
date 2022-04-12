@@ -33,6 +33,47 @@ np.random.seed(SEED)
 
 # Data Prepating
 
+
+## Basic information of dataset############
+
+
+def info(data):
+    print(f'Length of data: {len(data)}')
+    print('')
+    
+    x = pd.Series([data[i].dtypes for i in data.columns.tolist()])
+    print(x.value_counts().to_frame().reset_index().rename(columns={0: 'count', 'index': 'type'}))
+    print('')
+    
+    if data.isna().sum().sum() > 0:
+        print(f'Missing values: {data.isna().sum().sum()} ({round(data.isna().sum().sum()/len(data)*100, 2)}%)')
+    else:
+        print(f'Missing values: False')
+    print('')
+    
+    if data.duplicated().sum() > 0:
+        print(f'Duplicated values: {data.duplicated().sum()} ({round(data.duplicated().sum()/len(data)*100, 2)}%)')
+    else:
+        print(f'Duplicated values: False')
+    print('')
+    
+    try:
+        print(f'Unique target values: {data["target"].nunique()}')
+    except:
+        pass
+    
+print('TRAINING DATASET INFORMATION')
+print('')
+info(df)
+print('--------------------------------------')
+print('TEST DATASET INFORMATION')
+print('')
+info(df)
+
+
+
+
+
 # loading data
 df = pd.read_csv('data path')
 # getting dataframe columns names
